@@ -19,17 +19,25 @@ int main(void){
       input_dpl[loop] = input_text[loop];
     }
     
+    for(loop = 0; loop < sizeof(input_text); loop++) {
+      printf("Char %d is, %d\n", loop, input_text[loop]);
+    }
+
     char* p = strtok(input_text, " ");
+
+    
     while (p != NULL) { 
         strSize[strCnt++] = strlen(p);
         p = strtok(NULL, " "); 
     } 
-    for (loop = 0; loop < strCnt; loop++)
-    {
-        total+=strSize[loop];
-    }    
+    // for (loop = 0; loop < strCnt; loop++)
+    // {
+    //     total+=strSize[loop];
+    // }    
+    printf("Total number of letters: %d\n", total);
     
     double avg = (double)total*100/strCnt;
+    
 
     char* ps = strtok(input_dpl,sentDelim);
     while (ps != NULL) { 
